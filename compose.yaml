@@ -53,6 +53,7 @@ services:
             - DOCKER_HOST=unix:///var/run/docker.sock
         user: "${WWWUSER:-1000}:${WWWGROUP:-1000}"
         volumes:
+            - "./docker/localstack/init:/etc/localstack/init/ready.d"
             - "./docker/localstack:/var/lib/localstack"
             - "/var/run/docker.sock:/var/run/docker.sock"
         networks:
