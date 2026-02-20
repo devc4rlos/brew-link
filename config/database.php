@@ -113,6 +113,13 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        'dynamodb' => [
+            'driver' => 'dynamodb',
+            'table' => env('AWS_DYNAMODB_TABLE_NAME', 'brewlink_urls'),
+            'endpoint' => env('AWS_ENDPOINT'),
+            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+        ],
+
     ],
 
     /*
