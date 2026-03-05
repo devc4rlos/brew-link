@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace BrewLink\Domain\ValueObjects;
 
 use BrewLink\Domain\Alphabet;
-use BrewLink\Domain\Exceptions\UrlCode\CodeOutsideAlphabetAllowedException;
+use BrewLink\Domain\Exceptions\Url\CodeUrlOutsideAlphabetAllowedException;
 use InvalidArgumentException;
 
 readonly class UrlCode
@@ -28,7 +28,7 @@ readonly class UrlCode
         $regex = sprintf('/^[%s]+$/u', preg_quote($alphabet, '/'));
 
         if (! preg_match($regex, $value)) {
-            throw new CodeOutsideAlphabetAllowedException($value);
+            throw new CodeUrlOutsideAlphabetAllowedException($value);
         }
     }
 
