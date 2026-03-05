@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace BrewLink\Infrastructure\Services;
 
-use BrewLink\Domain\Alphabet;
 use BrewLink\Domain\Contracts\CodeGenerator;
+use BrewLink\Domain\Enums\Alphabet;
 use BrewLink\Infrastructure\Exceptions\ShortCodeGenerator\InvalidBaseException;
 use InvalidArgumentException;
 

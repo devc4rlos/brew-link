@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace BrewLink\Domain\ValueObjects;
 
-use BrewLink\Domain\Alphabet;
+use BrewLink\Domain\Enums\Alphabet;
 use BrewLink\Domain\Exceptions\Url\CodeUrlOutsideAlphabetAllowedException;
 use InvalidArgumentException;
 
