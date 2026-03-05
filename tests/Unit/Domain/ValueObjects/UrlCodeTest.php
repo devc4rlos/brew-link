@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Domain\ValueObjects;
 
-use BrewLink\Domain\Exceptions\UrlCode\CodeOutsideAlphabetAllowedException;
+use BrewLink\Domain\Exceptions\Url\CodeUrlOutsideAlphabetAllowedException;
 use BrewLink\Domain\ValueObjects\UrlCode;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
@@ -37,7 +37,7 @@ final class UrlCodeTest extends TestCase
 
     public function test_throws_exception_when_value_contains_invalid_characters(): void
     {
-        $this->expectException(CodeOutsideAlphabetAllowedException::class);
+        $this->expectException(CodeUrlOutsideAlphabetAllowedException::class);
         $this->expectExceptionMessage('contains characters outside the allowed alphabet.');
 
         new UrlCode('abc@123');
@@ -63,7 +63,7 @@ final class UrlCodeTest extends TestCase
     {
         $alphabet = 'ABC';
 
-        $this->expectException(CodeOutsideAlphabetAllowedException::class);
+        $this->expectException(CodeUrlOutsideAlphabetAllowedException::class);
 
         new UrlCode('ABD', $alphabet);
     }
@@ -81,7 +81,7 @@ final class UrlCodeTest extends TestCase
     {
         $alphabet = '😀😁😂😎';
 
-        $this->expectException(CodeOutsideAlphabetAllowedException::class);
+        $this->expectException(CodeUrlOutsideAlphabetAllowedException::class);
         $this->expectExceptionMessage('contains characters outside the allowed alphabet.');
 
         new UrlCode('😀🤖', $alphabet);

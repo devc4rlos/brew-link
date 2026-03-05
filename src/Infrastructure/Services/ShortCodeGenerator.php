@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace BrewLink\Infrastructure\Services;
 
-use BrewLink\Domain\Alphabet;
-use BrewLink\Domain\Contracts\CodeGenerator;
+use BrewLink\Domain\Contracts\CodeGeneratorInterface;
+use BrewLink\Domain\Enums\AlphabetEnum;
 use BrewLink\Infrastructure\Exceptions\ShortCodeGenerator\InvalidBaseException;
 use InvalidArgumentException;
 
-readonly class ShortCodeGenerator implements CodeGenerator
+readonly class ShortCodeGenerator implements CodeGeneratorInterface
 {
     /** @var array<int, string> */
     private array $alphabetArray;
@@ -18,7 +18,7 @@ readonly class ShortCodeGenerator implements CodeGenerator
 
     public function __construct(?string $alphabet = null)
     {
-        $alphabet = $alphabet ?? Alphabet::BASE62->value;
+        $alphabet = $alphabet ?? AlphabetEnum::BASE62->value;
 
         $this->alphabetArray = mb_str_split($alphabet, 1, 'UTF-8');
         $this->base = count($this->alphabetArray);

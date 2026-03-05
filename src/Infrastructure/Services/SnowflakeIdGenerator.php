@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace BrewLink\Infrastructure\Services;
 
 use BrewLink\Domain\Contracts\ClockInterface;
-use BrewLink\Domain\Contracts\IdGenerator;
+use BrewLink\Domain\Contracts\IdGeneratorInterface;
 use BrewLink\Infrastructure\Exceptions\Snowflake\ClockMovedBackwardsException;
 use BrewLink\Infrastructure\Exceptions\Snowflake\InvalidWorkerIdException;
 use BrewLink\Infrastructure\Exceptions\Snowflake\TimestampLimitExceededException;
 
-class SnowflakeIdGenerator implements IdGenerator
+class SnowflakeIdGenerator implements IdGeneratorInterface
 {
     private const EPOCH = 1767225600000;
 

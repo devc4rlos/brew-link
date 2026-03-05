@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace BrewLink\Domain\Exceptions\UrlCode;
+namespace BrewLink\Domain\Exceptions\Url;
 
-use BrewLink\Domain\Exceptions\UrlCode;
+use BrewLink\Domain\Exceptions\UrlException;
 use InvalidArgumentException;
 
-final class CodeOutsideAlphabetAllowedException extends InvalidArgumentException implements UrlCode
+final class CodeUrlOutsideAlphabetAllowedException extends InvalidArgumentException implements UrlException
 {
     public function __construct(string $value)
     {

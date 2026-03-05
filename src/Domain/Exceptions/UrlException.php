@@ -6,4 +6,4 @@ namespace BrewLink\Domain\Exceptions;
 
 use Throwable;
 
-interface UrlCode extends Throwable {}
+interface UrlException extends Throwable {}
