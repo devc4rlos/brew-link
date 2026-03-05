@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace BrewLink\Infrastructure\Services;
 
-use BrewLink\Domain\Contracts\CodeGenerator;
+use BrewLink\Domain\Contracts\CodeGeneratorInterface;
 use BrewLink\Domain\Enums\Alphabet;
 use BrewLink\Infrastructure\Exceptions\ShortCodeGenerator\InvalidBaseException;
 use InvalidArgumentException;
 
-readonly class ShortCodeGenerator implements CodeGenerator
+readonly class ShortCodeGenerator implements CodeGeneratorInterface
 {
     /** @var array<int, string> */
     private array $alphabetArray;

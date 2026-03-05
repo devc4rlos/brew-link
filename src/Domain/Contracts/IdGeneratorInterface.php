@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace BrewLink\Domain\Contracts;
 
-interface IdGenerator
+interface IdGeneratorInterface
 {
     public function generate(): int;
 }
