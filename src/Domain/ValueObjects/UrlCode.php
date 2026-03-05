@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace BrewLink\Domain\ValueObjects;
 
-use BrewLink\Domain\Enums\Alphabet;
+use BrewLink\Domain\Enums\AlphabetEnum;
 use BrewLink\Domain\Exceptions\Url\CodeUrlOutsideAlphabetAllowedException;
 use InvalidArgumentException;
 
@@ -14,7 +14,7 @@ readonly class UrlCode
         private string $value,
         ?string $alphabet = null,
     ) {
-        $alphabet = $alphabet ?? Alphabet::BASE62->value;
+        $alphabet = $alphabet ?? AlphabetEnum::BASE62->value;
 
         $this->validate($value, $alphabet);
     }
